@@ -47,6 +47,7 @@ export async function getBingWallpaperUrl(
 		const headers = new Headers();
 		headers.set("Cache-Control", "max-age=3600");
 		headers.set("Location", url);
+		headers.set("Vary", "Accept-Language");
 
 		return new Response(null, {
 			headers: headers,
@@ -60,7 +61,7 @@ export async function getBingWallpaperUrl(
 }
 
 export function getLangFromHeader(langHeader: string | null) {
-	if (/^(yue|zh)(-cn|-hans(-[a-z]+)?)?$/i.test(langHeader)) {
+	if (/^(yue|zh)(-cn|-hans(-[a-z]+)?)?/i.test(langHeader)) {
 		return "zh-CN";
 	} else if (langHeader?.startsWith("zh")) {
 		return "zh-TW";

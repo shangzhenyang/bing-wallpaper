@@ -11,6 +11,7 @@ export const onRequest: PagesFunction = async (context) => {
 		headers.set("Access-Control-Allow-Origin", "*");
 		headers.set("Cache-Control", "max-age=3600");
 		headers.set("Content-Type", "application/json; charset=utf-8");
+		headers.set("Vary", "Accept-Language");
 
 		return new Response(JSON.stringify(json), {
 			headers: headers
