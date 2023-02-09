@@ -1,0 +1,70 @@
+* {
+	box-sizing: border-box;
+	scrollbar-width: none;
+}
+
+body {
+	color: white;
+	font-family: Helvetica, "PingFang SC", "Microsoft YaHei", sans-serif;
+	font-size: small;
+	line-height: 1.5em;
+	margin: 0;
+	overflow: hidden;
+	-webkit-tap-highlight-color: transparent;
+}
+
+code {
+	font-family: Consolas, monospace;
+	left: 15px;
+	left: calc(env(safe-area-inset-left) + 15px);
+	overflow: auto;
+	top: 15px;
+	white-space: nowrap;
+}
+
+footer {
+	bottom: 15px;
+	color: inherit;
+	right: 15px;
+	right: calc(env(safe-area-inset-right) + 15px);
+	text-decoration: none;
+	-webkit-user-select: none;
+	user-select: none;
+	word-break: break-all;
+}
+
+footer:empty {
+	display: none;
+}
+
+html {
+	background-color: black;
+	height: 100%;
+}
+
+.bg-img {
+	display: block;
+	height: 100%;
+	object-fit: cover;
+	position: fixed;
+	transition: all .25s;
+	width: 100%;
+	z-index: -1;
+}
+
+.bg-img.blur {
+	-webkit-filter: blur(10px);
+	filter: blur(10px);
+	transform: scale(1.1);
+}
+
+.text-box {
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
+	background-color: rgba(255, 255, 255, .1);
+	border: 1px solid rgba(255, 255, 255, .2);
+	border-radius: 5px;
+	max-width: calc(100% - 30px);
+	padding: 10px 15px;
+	position: fixed;
+}
