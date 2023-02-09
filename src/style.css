@@ -27,14 +27,11 @@ footer {
 	color: inherit;
 	right: 15px;
 	right: calc(env(safe-area-inset-right) + 15px);
+	text-align: right;
 	text-decoration: none;
 	-webkit-user-select: none;
 	user-select: none;
 	word-break: break-all;
-}
-
-footer:empty {
-	display: none;
 }
 
 html {

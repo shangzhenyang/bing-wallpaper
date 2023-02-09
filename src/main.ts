@@ -27,9 +27,9 @@ window.addEventListener("load", () => {
 		.then((data) => {
 			if (data) {
 				const image = data.images[0];
-				const footer = document.getElementById("footer");
-				if (footer) {
-					footer.textContent = image.copyright;
+				const copyright = document.getElementById("copyright");
+				if (copyright) {
+					copyright.textContent = image.copyright;
 				}
 			}
 		});
