@@ -1,7 +1,22 @@
 import "./style.css";
 
+function openWallpaper() {
+	window.open("https://bing.shangzhenyang.com/api/1080p");
+}
+
+window.addEventListener("click", () => {
+	document.getElementById("bg-img")?.classList.toggle("blur");
+});
+
+window.addEventListener("keydown", (evt) => {
+	if ((evt.ctrlKey || evt.metaKey) && evt.key === "s") {
+		evt.preventDefault();
+		openWallpaper();
+	}
+});
+
 window.addEventListener("load", () => {
-	fetch("/api/json")
+	fetch("https://bing.shangzhenyang.com/api/json")
 		.then((response) => {
 			if (response.ok) {
 				return response.json();
@@ -18,4 +33,8 @@ window.addEventListener("load", () => {
 				}
 			}
 		});
+});
+
+document.getElementById("footer")?.addEventListener("click", () => {
+	openWallpaper();
 });

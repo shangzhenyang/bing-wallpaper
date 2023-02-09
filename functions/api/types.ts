@@ -1,5 +1,4 @@
 interface ImageItem {
-	hsh: string;
 	url: string;
 }
 
