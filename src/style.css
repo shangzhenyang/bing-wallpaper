@@ -25,6 +25,7 @@ code {
 footer {
 	bottom: 15px;
 	color: inherit;
+	cursor: pointer;
 	right: 15px;
 	right: calc(env(safe-area-inset-right) + 15px);
 	text-align: right;
