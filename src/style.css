@@ -30,7 +30,6 @@ footer {
 	right: calc(env(safe-area-inset-right) + 15px);
 	text-align: right;
 	text-decoration: none;
-	-webkit-user-select: none;
 	user-select: none;
 }
 
@@ -50,13 +49,11 @@ html {
 }
 
 .bg-img.blur {
-	-webkit-filter: blur(10px);
 	filter: blur(10px);
 	transform: scale(1.1);
 }
 
 .text-box {
-	-webkit-backdrop-filter: blur(10px);
 	backdrop-filter: blur(10px);
 	background-color: rgba(0, 0, 0, .2);
 	border: 1px solid rgba(255, 255, 255, .2);

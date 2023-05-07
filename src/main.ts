@@ -1,12 +1,14 @@
-import "./style.css";
+import "@/style.css";
+
+const API_BASE_URL = "https://bing.shangzhenyang.com/api";
 
 function openWallpaper() {
-	window.open("https://bing.shangzhenyang.com/api/1080p");
+	window.open(API_BASE_URL + "/1080p");
 }
 
-window.addEventListener("keydown", (evt) => {
-	if ((evt.ctrlKey || evt.metaKey) && evt.key === "s") {
-		evt.preventDefault();
+window.addEventListener("keydown", (event) => {
+	if ((event.ctrlKey || event.metaKey) && event.key === "s") {
+		event.preventDefault();
 		openWallpaper();
 	}
 });
@@ -17,7 +19,7 @@ window.addEventListener("load", async () => {
 		return;
 	}
 	try {
-		const response = await fetch("https://bing.shangzhenyang.com/api/json");
+		const response = await fetch(API_BASE_URL + "/json");
 		if (!response.ok) {
 			throw new Error(response.status.toString());
 		}
