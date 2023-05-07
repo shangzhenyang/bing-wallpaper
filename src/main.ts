@@ -11,30 +11,31 @@ window.addEventListener("keydown", (evt) => {
 	}
 });
 
-window.addEventListener("load", () => {
-	fetch("https://bing.shangzhenyang.com/api/json")
-		.then((response) => {
-			if (response.ok) {
-				return response.json();
-			} else {
-				throw new Error(response.statusText);
-			}
-		})
-		.then((data) => {
-			if (data) {
-				const image = data.images[0];
-				const copyright = document.getElementById("copyright");
-				if (copyright) {
-					copyright.textContent = image.copyright;
-				}
-			}
-		});
+window.addEventListener("load", async () => {
+	const copyright = document.getElementById("copyright");
+	if (!copyright) {
+		return;
+	}
+	try {
+		const response = await fetch("https://bing.shangzhenyang.com/api/json");
+		if (!response.ok) {
+			throw new Error(response.status.toString());
+		}
+		const data = await response.json();
+		if (data) {
+			const image = data.images[0];
+			copyright.textContent = image.copyright;
+		}
+	} catch (error) {
+		console.error(error);
+		if (error instanceof Error) {
+			copyright.textContent = `Error: ${error.message}`;
+		}
+	}
 });
 
 document.getElementById("bg-img")?.addEventListener("click", function () {
 	this.classList.toggle("blur");
 });
 
-document.getElementById("footer")?.addEventListener("click", () => {
-	openWallpaper();
-});
+document.getElementById("footer")?.addEventListener("click", openWallpaper);
