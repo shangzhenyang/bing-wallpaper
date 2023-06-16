@@ -26,4 +26,4 @@ See [Deploy a Vite 3 site · Cloudflare Pages docs](https://developers.cloudflar
 
 ## Try it Out
 
-https://bing.shangzhenyang.com/
+https://bing-wallpaper.yue.im
